@@ -70,6 +70,7 @@ public class SignUpApplication {
 		}
 	}
 
+
 	private String getRandomCode() {
 		return RandomStringUtils.random(10, true, true);
 	}
