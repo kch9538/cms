@@ -60,3 +60,26 @@ Content-Type: application/json
   "name": "게이밍마우스",
   "price": 15000
 }
+### 상품 삭제
+DELETE http://localhost:8080/seller/product?id=1
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "게이밍마우스",
+      "price": 15000
+    }
+  ],
+  "id": 1,
+  "name": "LED게이밍마우스"
+}
+
+### 상품 아이템 삭제
+DELETE http://localhost:8080/seller/product/item?id=1
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
