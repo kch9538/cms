@@ -1,0 +1,85 @@
+### 상품 추가
+POST http://localhost:8080/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "count": 1,
+      "name": "게이밍마우스",
+      "price": 15000
+    }
+  ],
+  "name": "마우스"
+}
+
+### 상품 아이템 추가
+POST http://localhost:8080/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
+
+{
+  "productId": 1,
+  "count": 1,
+  "name": "게이밍마우스",
+  "price": 15000
+}
+
+### 이메일 인증 (고객)
+GET http://localhost:8080/signup/customer/verify/?email=ch9538@naver.com&code=tmmSDdRmrW
+
+
+### 로그인(고객)
+POST http://localhost:8080/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "ch9538@naver.com",
+  "password": "password"
+}
+
+
+### 회원 정보 조회(고객)
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ1MjQxNjcsImV4cCI6MTY2NDYxMDU2N30.xxnpHkbyZjnpxVNEDrlOSU1DmZL_NvzSQgyHOdds3LA
+
+
+### 잔액 변경 (고객)
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ0NjYxOTIsImV4cCI6MTY2NDU1MjU5Mn0.9p17Jnqxu1BlmGue3PvRSb7qLcXcr7HVt3QJZl6iaKI
+
+{
+  "from": "ch9538@naver.com",
+  "message": "충전",
+  "money": 50000
+}
+
+
+
+### 회원가입(셀러)
+POST http://localhost:8080/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "1990-10-04",
+  "email": "ch9538@naver.com",
+  "name": "name",
+  "password": "password",
+  "phone": "010-1234-5678"
+}
+
+### 이메일 인증 (셀러)
+GET http://localhost:8080/signup/seller/verify/?email=ch9538@naver.com&code=edV03tFG0Y
+
+### 로그인(셀러)
+POST http://localhost:8080/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "ch9538@naver.com",
+  "password": "password",
+}
