@@ -20,15 +20,21 @@ public class CartService {
 	private final RedisClient redisClient;
 
 	public Cart getCart(Long customerId) {
-		return redisClient.get(customerId, Cart.class);
+		Cart cart = redisClient.get(customerId, Cart.class);
+
+		return cart != null ? cart : new Cart();
 	}
+
+	public Cart putCart(Long custoId, Cart cart) {
+		redisClient.put(custoId, cart);
+		return cart;	}
 
 	public Cart addCart(Long customerId, AddProductCartForm form) {
 
 		Cart cart = redisClient.get(customerId, Cart.class);
 		if (cart == null) {
 			cart = new Cart();
-			cart.setCustomId(customerId);
+			cart.setCustomerId(customerId);
 		}
 
 		Optional<Product> productOptional = cart.getProducts().stream()
