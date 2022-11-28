@@ -1,4 +1,5 @@
 package com.zerobase.cms.sevice;
+import static com.zerobase.cms.exception.ErrorCode.NOT_FOUND_ITEM;
 import static com.zerobase.cms.exception.ErrorCode.NOT_FOUND_PRODUCT;
 import static com.zerobase.cms.exception.ErrorCode.SAME_ITEM_NAME;
 
@@ -6,6 +7,7 @@ import com.zerobase.cms.exception.CustomException;
 import com.zerobase.cms.model.Product;
 import com.zerobase.cms.model.ProductItem;
 import com.zerobase.cms.model.product.AddProductItemForm;
+import com.zerobase.cms.model.product.UpdateProductItemForm;
 import com.zerobase.cms.model.repository.ProductItemRepository;
 import com.zerobase.cms.model.repository.ProductRepository;
 import java.util.Arrays;
@@ -36,6 +38,17 @@ public class ProductItemService {
 		ProductItem productItem = ProductItem.of(sellerId, form);
 		product.getProductItems().add(productItem);
 		return product;
+	}
+
+	@Transactional
+	public ProductItem updateProductItem(Long sellerId, UpdateProductItemForm form) {
+		ProductItem productItem = productItemRepository.findById(form.getId())
+			.filter(pi -> pi.getSellerId().equals(sellerId))
+			.orElseThrow(() -> new CustomException(NOT_FOUND_ITEM));
+		productItem.setName(form.getName());
+		productItem.setCount(form.getCount());
+		productItem.setPrice(form.getPrice());
+		return productItem;
 	}
 
 }
