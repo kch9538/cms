@@ -12,6 +12,7 @@ import com.zerobase.cms.user.exception.CustomException;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.regex.Pattern;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,21 @@ public class SignUpCustomerService {
 	public boolean isEmailExist(String email) {
 		return customerRepository.findByEmail(email.toLowerCase(Locale.ROOT))
 			.isPresent();
+	}
+	//이메일 정규 표현식
+	public boolean isMailPattern(String email) {
+		return Pattern.matches("\\w+@\\w+\\.\\w+(\\.\\w+)?", email);
+	}
+
+	//핸드폰 번호 정규식
+	public boolean isPhonePattern(String phone) {
+		return Pattern.matches("^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$", phone);
+	}
+
+	//비밀번호 -> 최소 하나의 문자, 최소 하나의 숫자, 최소 하나의 특수문자, 최소 8자
+	public boolean isPasswordPattern(String password) {
+		return Pattern.matches(
+			"^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$", password);
 	}
 
 	@Transactional

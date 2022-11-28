@@ -13,9 +13,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ServletComponentScan
 @EnableFeignClients
 @EnableJpaAuditing
-public class ZerobaseOrderApplication {
+public class OrderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZerobaseOrderApplication.class, args);
+		SpringApplication.run(OrderApplication.class, args);
 	}
 }
