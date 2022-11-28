@@ -1,6 +1,13 @@
 package com.zerobase.cms.sevice;
+import static com.zerobase.cms.exception.ErrorCode.NOT_FOUND_ITEM;
+import static com.zerobase.cms.exception.ErrorCode.NOT_FOUND_PRODUCT;
+
+import com.zerobase.cms.exception.CustomException;
 import com.zerobase.cms.model.Product;
+import com.zerobase.cms.model.ProductItem;
 import com.zerobase.cms.model.product.AddProductForm;
+import com.zerobase.cms.model.product.UpdateProductForm;
+import com.zerobase.cms.model.product.UpdateProductItemForm;
 import com.zerobase.cms.model.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,5 +22,23 @@ public class ProductService {
 	@Transactional
 	public Product addProduct(Long sellerId, AddProductForm form) {
 		return productRepository.save(Product.of(sellerId, form));
+	}
+	@Transactional
+	public Product updateProduct(Long sellerId, UpdateProductForm form) {
+		Product product = productRepository.findBySellerIdAndId(sellerId, form.getId())
+			.orElseThrow(() -> new CustomException(NOT_FOUND_PRODUCT));
+
+		product.setName(form.getName());
+		product.setDescription(form.getDescription());
+
+		for (UpdateProductItemForm itemForm : form.getItems()) {
+			ProductItem item = product.getProductItems().stream()
+				.filter(pi -> pi.getId().equals(itemForm.getId()))
+				.findFirst().orElseThrow(() -> new CustomException(NOT_FOUND_ITEM));
+			item.setName(itemForm.getName());
+			item.setPrice(itemForm.getPrice());
+			item.setCount(itemForm.getCount());
+		}
+		return product;
 	}
 }
