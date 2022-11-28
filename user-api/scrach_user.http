@@ -6,8 +6,8 @@ Content-Type: application/json
   "birth": "1990-10-04",
   "email": "ch9538@naver.com",
   "name": "name",
-  "password": "password",
-  "phone": "010-1234-5678"
+  "password": "PassWord!11!",
+  "phone": "01012345678"
 }
 
 
