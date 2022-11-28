@@ -1,5 +1,5 @@
 ### 상품 추가
-POST http://localhost:8080/seller/product
+POST http://localhost:8081/seller/product
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
 
@@ -16,7 +16,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jO
 }
 
 ### 상품 아이템 추가
-POST http://localhost:8080/seller/product/item
+POST http://localhost:8081/seller/product/item
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
 
@@ -28,7 +28,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jO
 }
 
 ### 상품 수정
-PUT http://localhost:8080/seller/product
+PUT http://localhost:8081/seller/product
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
 
@@ -48,10 +48,10 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jO
 }
 
 ### 이메일 인증 (셀러)
-GET http://localhost:8080/signup/seller/verify/?email=ch9538@naver.com&code=edV03tFG0Y
+GET http://localhost:8081/signup/seller/verify/?email=ch9538@naver.com&code=edV03tFG0Y
 
 ### 로그인(셀러)
-POST http://localhost:8080/signIn/seller
+POST http://localhost:8081/signIn/seller
 Content-Type: application/json
 
 {
@@ -61,7 +61,7 @@ Content-Type: application/json
   "price": 15000
 }
 ### 상품 삭제
-DELETE http://localhost:8080/seller/product?id=1
+DELETE http://localhost:8081/seller/product?id=1
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
 
@@ -80,20 +80,20 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jO
 }
 
 ### 상품 아이템 삭제
-DELETE http://localhost:8080/seller/product/item?id=1
+DELETE http://localhost:8081/seller/product/item?id=1
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NTMyOTAzLCJleHAiOjE2NjQ2MTkzMDN9.q4FnUYgX6J3u6seVlWwzZhZBDOr25EAPezZJa7L1Jzw
 
 ### 상품 검색
-GET http://localhost:8080/search/product?name=게이밍
+GET http://localhost:8081/search/product?name=게이밍
 Content-Type: application/json
 
 ### 상품 디테일 검색
-GET http://localhost:8080/search/product/detail?productId=1
+GET http://localhost:8081/search/product/detail?productId=1
 Content-Type: application/json
 
 ### 카트 추가
-POST http://localhost:8080/customer/cart
+POST http://localhost:8081/customer/cart
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ3MjUyMDAsImV4cCI6MTY2NDgxMTYwMH0.kUeSvJr27WCEG2QSUiSVQOU-ATeekg6JeDpvHOkEb1s
 
@@ -112,7 +112,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jO
 }
 
 ### 상품 추가
-POST http://localhost:8080/seller/product
+POST http://localhost:8081/seller/product
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NzI0OTgzLCJleHAiOjE2NjQ4MTEzODN9.Aq6Q9JEKzMAJYBoLwj2_DilRnvY_vWziiGsnlddz5-k
 
@@ -126,4 +126,35 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jO
     }
   ],
   "name": "LED게이밍마우스"
+}
+### 카트 조회
+GET http://localhost:8081/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ3MjUyMDAsImV4cCI6MTY2NDgxMTYwMH0.kUeSvJr27WCEG2QSUiSVQOU-ATeekg6JeDpvHOkEb1s
+
+### 카트 주문
+POST http://localhost:8081/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ3MjUyMDAsImV4cCI6MTY2NDgxMTYwMH0.kUeSvJr27WCEG2QSUiSVQOU-ATeekg6JeDpvHOkEb1s
+
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": 1,
+      "name": "마우스",
+      "description": "상품 설명",
+      "items": [
+        {
+          "id": 1,
+          "name": "게이밍마우스",
+          "count": 1,
+          "price": 150000
+        }
+      ]
+    }
+  ],
+  "messages": []
 }

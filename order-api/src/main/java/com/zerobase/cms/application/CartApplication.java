@@ -46,6 +46,7 @@ public class CartApplication {
 	public Cart getCart(Long customerId) {
 
 		Cart cart = refreshCart(cartService.getCart(customerId));
+		cartService.putCart(cart.getCustomerId(), cart);
 		Cart returnCart = new Cart();
 
 		returnCart.setCustomerId(customerId);
@@ -60,7 +61,7 @@ public class CartApplication {
 		cartService.putCart(customerId,null);
 	}
 
-	private Cart refreshCart(Cart cart) {
+	protected Cart refreshCart(Cart cart) {
 
 
 		Map<Long, Product> productMap = productSearchService.getListByProductIds(
@@ -130,7 +131,6 @@ public class CartApplication {
 				cart.addMessage(builder.toString());
 			}
 		}
-		cartService.putCart(cart.getCustomerId(), cart);
 		return cart;
 
 	}
