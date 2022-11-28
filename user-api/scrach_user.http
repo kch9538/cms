@@ -1,0 +1,69 @@
+### 회원가입 (고객)
+POST http://localhost:8080/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1990-10-04",
+  "email": "ch9538@naver.com",
+  "name": "name",
+  "password": "password",
+  "phone": "010-1234-5678"
+}
+
+
+### 이메일 인증 (고객)
+GET http://localhost:8080/signup/customer/verify/?email=amyyzzin@naver.com&code=dN7plJeU0p
+
+
+### 로그인(고객)
+POST http://localhost:8080/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "ch9538@naver.com",
+  "name": "name"
+}
+
+
+### 회원 정보 조회(고객)
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ0Njc0MDUsImV4cCI6MTY2NDU1MzgwNX0.SJZh-_GDh9U_5Ytno2q_kFWhbcP7cY7SrKC9bz76C7A
+
+
+### 잔액 변경 (고객)
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ0NjYxOTIsImV4cCI6MTY2NDU1MjU5Mn0.9p17Jnqxu1BlmGue3PvRSb7qLcXcr7HVt3QJZl6iaKI
+
+{
+  "from": "ch9538@naver.com",
+  "message": "용돈",
+  "money": 100000
+}
+
+
+
+### 회원가입(셀러)
+POST http://localhost:8080/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "1990-10-04",
+  "email": "ch9538@naver.com",
+  "name": "name",
+  "password": "password",
+  "phone": "010-1234-5678"
+}
+
+### 이메일 인증 (셀러)
+GET http://localhost:8080/signup/seller/verify/?email=amyyzzin@naver.com&code=u8Cjc6NYeA
+
+### 로그인(셀러)
+POST http://localhost:8080/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "ch9538@naver.com",
+  "password": "password"
+}
