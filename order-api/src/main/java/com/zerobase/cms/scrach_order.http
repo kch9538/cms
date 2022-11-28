@@ -91,3 +91,39 @@ Content-Type: application/json
 ### 상품 디테일 검색
 GET http://localhost:8080/search/product/detail?productId=1
 Content-Type: application/json
+
+### 카트 추가
+POST http://localhost:8080/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ3MjUyMDAsImV4cCI6MTY2NDgxMTYwMH0.kUeSvJr27WCEG2QSUiSVQOU-ATeekg6JeDpvHOkEb1s
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "게이밍마우스",
+      "price": 15000
+    }
+  ],
+  "id": 1,
+  "name": "LED게이밍마우스"
+}
+
+### 상품 추가
+POST http://localhost:8080/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtTFc4Q25jazFUSXFwYXNTOHd1a1ZRSW5jOXdrcGdEM2FnSWRCR0NFa3pzPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0NzI0OTgzLCJleHAiOjE2NjQ4MTEzODN9.Aq6Q9JEKzMAJYBoLwj2_DilRnvY_vWziiGsnlddz5-k
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "count": 1,
+      "name": "게이밍마우스",
+      "price": 15000
+    }
+  ],
+  "name": "LED게이밍마우스"
+}
